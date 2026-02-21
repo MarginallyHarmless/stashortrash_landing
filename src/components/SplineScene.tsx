@@ -1,4 +1,5 @@
-import { lazy, Suspense } from 'react';
+import { lazy, Suspense, useCallback } from 'react';
+import type { Application } from '@splinetool/runtime';
 
 const Spline = lazy(() => import('@splinetool/react-spline'));
 
@@ -9,6 +10,10 @@ interface SplineSceneProps {
 
 export default function SplineScene({ scene, className = '' }: SplineSceneProps) {
   const isFullHeight = className.includes('h-full');
+
+  const handleLoad = useCallback((_splineApp: Application) => {
+    // no-op for now
+  }, []);
 
   return (
     <div className={`relative w-full ${className}`}>
@@ -22,6 +27,7 @@ export default function SplineScene({ scene, className = '' }: SplineSceneProps)
         <Spline
           scene={scene}
           style={isFullHeight ? { width: '100%', height: '100%' } : undefined}
+          onLoad={handleLoad}
         />
       </Suspense>
     </div>
