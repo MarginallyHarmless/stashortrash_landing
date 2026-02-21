@@ -1,0 +1,26 @@
+# Stash or Trash
+
+> Swipe-based Android app to clean up your phone's photo gallery. Free, no ads, no cloud.
+
+## What it does
+
+Stash or Trash helps you declutter your photo gallery fast. Swipe right to keep a photo, swipe left to delete it. The Smart Scanner automatically finds junk photos — duplicates, blurry shots, too-dark images, and old screenshots — so you don't have to scroll through thousands of photos manually.
+
+## Key features
+
+- Swipe left to trash, swipe right to stash (keep)
+- Smart Scanner detects duplicates, blurry photos, dark photos, and screenshots
+- See exactly how much storage you'll recover before confirming
+- Undo support — nothing is permanently deleted until you confirm
+- 100% on-device processing, no cloud, no accounts, no tracking
+- Free with no ads
+
+## Privacy
+
+No data collection whatsoever. All photo analysis happens on-device. No accounts, no sign-up, no analytics, no third-party services. Works completely offline.
+
+## Links
+
+- Website: https://stashortrash.com
+- Google Play: https://play.google.com/store/apps/details?id=YOUR_APP_ID
+- Privacy Policy: https://stashortrash.com/privacy
