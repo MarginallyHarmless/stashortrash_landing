@@ -1,0 +1,54 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout
+  title="Privacy Policy — Stash or Trash"
+  description="Stash or Trash privacy policy. No data collection, no cloud, no tracking. Everything stays on your device."
+>
+  <div slot="content" class="py-20 md:py-32 px-4">
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-4xl md:text-5xl font-bold mb-8">Privacy Policy</h1>
+      <p class="text-white/50 mb-12">Last updated: February 21, 2026</p>
+
+      <div class="space-y-10 text-white/70 text-lg leading-relaxed">
+        <section>
+          <h2 class="text-2xl font-semibold text-white mb-4">The Short Version</h2>
+          <p>Stash or Trash does not collect, store, or transmit any of your data. Your photos never leave your device. There are no accounts, no analytics, and no tracking of any kind.</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-white mb-4">On-Device Processing</h2>
+          <p>All photo analysis — including duplicate detection, blur detection, and screenshot identification — happens entirely on your device. No images or metadata are ever uploaded to any server.</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-white mb-4">No Data Collection</h2>
+          <p>We do not collect personal information, usage data, device identifiers, or any other data. The app works completely offline and requires no internet connection.</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-white mb-4">No Accounts or Sign-Up</h2>
+          <p>Stash or Trash does not require you to create an account, sign in, or provide any personal information to use the app.</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-white mb-4">No Third-Party Services</h2>
+          <p>The app does not integrate with any third-party analytics, advertising, or tracking services.</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-white mb-4">Permissions</h2>
+          <p>The app requests access to your photo library solely to display and help you organize your photos. This access is used only on-device and no data is shared externally.</p>
+        </section>
+
+        <section>
+          <h2 class="text-2xl font-semibold text-white mb-4">Contact</h2>
+          <p>If you have any questions about this privacy policy, contact us at <a href="mailto:hello@stashortrash.com" class="text-teal hover:text-teal-bright transition-colors">hello@stashortrash.com</a>.</p>
+        </section>
+      </div>
+    </div>
+  </div>
+  <Footer slot="footer" />
+</Layout>

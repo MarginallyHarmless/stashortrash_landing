@@ -51,12 +51,15 @@
           <!-- Inner shadow -->
           <div class="absolute inset-0 shadow-[inset_0_2px_20px_rgba(0,0,0,0.4)] pointer-events-none rounded-[2rem]"></div>
           <div class="absolute inset-3 rounded-2xl overflow-hidden">
-            <img
-              src="/images/smart-scanner-screenshot.jpg"
-              alt="Stash or Trash Smart Scanner detecting blurry, dark, and duplicate photos"
-              class="w-full h-full object-cover"
-              loading="lazy"
-            />
+            <picture>
+              <source srcset="/images/smart-scanner-screenshot.webp" type="image/webp" />
+              <img
+                src="/images/smart-scanner-screenshot.jpg"
+                alt="Stash or Trash Smart Scanner detecting blurry, dark, and duplicate photos"
+                class="w-full h-full object-cover"
+                loading="lazy"
+              />
+            </picture>
           </div>
         </div>
       </div>
