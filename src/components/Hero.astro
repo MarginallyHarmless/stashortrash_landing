@@ -1,0 +1,33 @@
+---
+import SplineScene from './SplineScene.tsx';
+---
+
+<section class="min-h-screen flex flex-col items-center justify-center px-4 py-16 md:py-24">
+  <div class="max-w-4xl mx-auto text-center">
+    <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
+      Swipe Your Photo Gallery Clean
+    </h1>
+    <p class="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-12">
+      The fast, fun way to declutter your phone's photo gallery. Swipe left to delete, right to keep — it's that simple.
+    </p>
+  </div>
+
+  <div class="w-full max-w-4xl mx-auto mb-12">
+    <SplineScene client:visible scene="https://prod.spline.design/Cfm4i5957ArEJqgM/scene.splinecode" className="aspect-video" />
+  </div>
+
+  <a
+    href="https://play.google.com/store/apps/details?id=YOUR_APP_ID"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="inline-block transition-transform hover:scale-105"
+  >
+    <img
+      src="/images/google-play-badge.png"
+      alt="Get Stash or Trash on Google Play — free photo cleanup app"
+      width="200"
+      height="60"
+      class="h-14 w-auto"
+    />
+  </a>
+</section>
