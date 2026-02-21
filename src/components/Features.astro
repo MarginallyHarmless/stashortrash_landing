@@ -5,26 +5,46 @@
     <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">
       Everything You Need
     </h2>
-    <div class="grid md:grid-cols-2 gap-6" id="features-grid">
-      <!-- Featured: full width -->
-      <div class="card card-teal tilt-card md:col-span-2">
-        <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-xl bg-teal/15 flex items-center justify-center flex-shrink-0">
-            <svg class="w-6 h-6 text-teal-bright" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+    <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4" id="features-grid">
+      <!-- Browse by Date: Hero card (2col x 2row) -->
+      <div class="tilt-card sm:col-span-2 lg:row-span-2 rounded-[1.25rem] border border-white/10 bg-gradient-to-b from-teal/15 to-carbon p-8 flex flex-col justify-between transition-transform duration-300">
+        <div>
+          <div class="w-14 h-14 rounded-2xl bg-teal/20 flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-teal-bright" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
             </svg>
           </div>
-          <div>
-            <h3 class="font-bold text-lg mb-2">Browse by Date or Album</h3>
-            <p class="text-white/60">Jump to any month or album. See your progress on each.</p>
-          </div>
+          <h3 class="font-bold text-xl mb-3">Browse by Date or Album</h3>
+          <p class="text-white/60 text-base">Jump to any month or album. See your progress on each.</p>
         </div>
       </div>
 
-      <!-- Featured: full width -->
-      <div class="card card-teal tilt-card md:col-span-2">
+      <!-- Videos Too: Small card (1x1) -->
+      <div class="tilt-card rounded-[1.25rem] border border-white/10 bg-gradient-to-b from-teal/15 to-carbon p-6 transition-transform duration-300">
+        <div class="w-10 h-10 rounded-lg bg-teal/15 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-teal-bright" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
+          </svg>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Videos Too</h3>
+        <p class="text-white/60 text-sm">Not just photos — swipe through videos the same way.</p>
+      </div>
+
+      <!-- Random Shuffle: Small card (1x1) -->
+      <div class="tilt-card rounded-[1.25rem] border border-white/10 bg-gradient-to-b from-teal/15 to-carbon p-6 transition-transform duration-300">
+        <div class="w-10 h-10 rounded-lg bg-teal/15 flex items-center justify-center mb-4">
+          <svg class="w-5 h-5 text-teal-bright" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+          </svg>
+        </div>
+        <h3 class="font-bold text-lg mb-2">Random Shuffle</h3>
+        <p class="text-white/60 text-sm">Can't decide where to start? Shuffle your gallery and swipe at random.</p>
+      </div>
+
+      <!-- Undo Anytime: Wide card (2col) -->
+      <div class="tilt-card sm:col-span-2 rounded-[1.25rem] border border-white/10 bg-gradient-to-b from-teal/15 to-carbon p-6 transition-transform duration-300">
         <div class="flex items-start gap-4">
-          <div class="w-12 h-12 rounded-xl bg-teal/15 flex items-center justify-center flex-shrink-0">
+          <div class="w-12 h-12 rounded-xl bg-teal/20 flex items-center justify-center flex-shrink-0">
             <svg class="w-6 h-6 text-teal-bright" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h10a8 8 0 018 8v2M3 10l6 6m-6-6l6-6" />
             </svg>
@@ -36,45 +56,30 @@
         </div>
       </div>
 
-      <!-- 2x2 grid -->
-      <div class="card card-teal tilt-card">
+      <!-- Track Progress: Small card (1x1) -->
+      <div class="tilt-card rounded-[1.25rem] border border-white/10 bg-gradient-to-b from-teal/15 to-carbon p-6 transition-transform duration-300">
         <div class="w-10 h-10 rounded-lg bg-teal/15 flex items-center justify-center mb-4">
           <svg class="w-5 h-5 text-teal-bright" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
             <path stroke-linecap="round" stroke-linejoin="round" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
           </svg>
         </div>
         <h3 class="font-bold text-lg mb-2">Track Your Progress</h3>
-        <p class="text-white/60">Stats show how many photos you've reviewed, kept, and deleted — plus space recovered.</p>
+        <p class="text-white/60 text-sm">Stats show how many photos you've reviewed, kept, and deleted — plus space recovered.</p>
       </div>
 
-      <div class="card card-teal tilt-card">
-        <div class="w-10 h-10 rounded-lg bg-teal/15 flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-teal-bright" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
-          </svg>
+      <!-- Organize While Swiping: Wide card (3col on desktop) -->
+      <div class="tilt-card sm:col-span-2 lg:col-span-3 rounded-[1.25rem] border border-white/10 bg-gradient-to-b from-teal/15 to-carbon p-6 transition-transform duration-300">
+        <div class="flex items-start gap-4">
+          <div class="w-10 h-10 rounded-lg bg-teal/15 flex items-center justify-center flex-shrink-0">
+            <svg class="w-5 h-5 text-teal-bright" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+            </svg>
+          </div>
+          <div>
+            <h3 class="font-bold text-lg mb-2">Organize While Swiping</h3>
+            <p class="text-white/60">Move photos into albums without leaving the swipe flow.</p>
+          </div>
         </div>
-        <h3 class="font-bold text-lg mb-2">Organize While Swiping</h3>
-        <p class="text-white/60">Move photos into albums without leaving the swipe flow.</p>
-      </div>
-
-      <div class="card card-teal tilt-card">
-        <div class="w-10 h-10 rounded-lg bg-teal/15 flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-teal-bright" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
-          </svg>
-        </div>
-        <h3 class="font-bold text-lg mb-2">Videos Too</h3>
-        <p class="text-white/60">Not just photos — swipe through videos the same way.</p>
-      </div>
-
-      <div class="card card-teal tilt-card">
-        <div class="w-10 h-10 rounded-lg bg-teal/15 flex items-center justify-center mb-4">
-          <svg class="w-5 h-5 text-teal-bright" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-          </svg>
-        </div>
-        <h3 class="font-bold text-lg mb-2">Random Shuffle</h3>
-        <p class="text-white/60">Can't decide where to start? Shuffle your entire gallery and swipe at random.</p>
       </div>
     </div>
   </div>
