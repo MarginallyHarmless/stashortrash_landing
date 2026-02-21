@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-carbon: #1E1B18;
+  --color-carbon-light: #2A2724;
+  --color-teal: #61988E;
+  --color-mauve: #A64253;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-carbon);
+  color: #ffffff;
+}
+
+/* Scroll fade-in animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
