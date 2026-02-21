@@ -1,8 +1,11 @@
-<section class="fade-in py-20 md:py-32 px-4 relative overflow-hidden">
-  <!-- Subtle teal glow behind stat -->
-  <div class="glow-teal top-[40%] left-[50%] -translate-x-1/2 opacity-10"></div>
+<section class="fade-in py-20 md:py-32 px-4 relative overflow-hidden section-slant-down bg-carbon-light/30">
+  <!-- Larger teal glow behind stat -->
+  <div class="glow-teal top-[40%] left-[50%] -translate-x-1/2"></div>
 
   <div class="relative z-10 max-w-3xl mx-auto text-center">
+    <!-- Teal accent bar above heading -->
+    <div class="w-15 h-1 bg-teal mx-auto mb-8 rounded-full"></div>
+
     <h2 class="text-3xl md:text-5xl font-bold mb-8">
       Thousands of Photos. No Time to Sort Them.
     </h2>
@@ -12,12 +15,38 @@
       <p>So you keep putting it off, and the pile keeps growing.</p>
     </div>
 
-    <!-- Gradient divider -->
-    <div class="mt-12 mb-6 h-px w-48 mx-auto bg-gradient-to-r from-transparent via-teal-bright/40 to-transparent"></div>
-
-    <div class="scale-in text-6xl md:text-8xl font-extrabold text-teal-bright glow-text-teal">
-      2,000+
+    <div class="mt-12">
+      <div class="inline-block rounded-full bg-teal/15 px-8 py-4">
+        <div class="scale-in text-6xl md:text-8xl font-extrabold text-teal-bright glow-text-teal" id="stat-counter">
+          0+
+        </div>
+      </div>
+      <p class="text-white/50 mt-4">photos on the average phone</p>
     </div>
-    <p class="text-white/50 mt-2">photos on the average phone</p>
   </div>
 </section>
+
+<script>
+  const counter = document.getElementById('stat-counter');
+  if (counter) {
+    const target = 2000;
+    let started = false;
+    const observer = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !started) {
+        started = true;
+        const duration = 1500;
+        const start = performance.now();
+        const step = (now: number) => {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.floor(eased * target);
+          counter.textContent = current.toLocaleString() + '+';
+          if (progress < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      }
+    }, { threshold: 0.5 });
+    observer.observe(counter);
+  }
+</script>
