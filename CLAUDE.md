@@ -30,6 +30,17 @@ This repository contains the landing page website — not the Android app itself
 - SEO-first: descriptive alt text, keyword-targeted copy, proper metadata
 - Static site generator preferred (Hugo, Astro, or plain HTML)
 
-## Current State
+## Tech Stack
 
-The project is in the planning phase. No frontend framework or build tooling has been set up yet. Implementation will need to start with scaffolding the web project.
+- **Astro 5** — static site generator
+- **Tailwind CSS v4** — styling via `@theme` in `src/styles/global.css` (no `tailwind.config.mjs`)
+- **React** — only used for the Spline 3D embed (`client:visible` island)
+- **@splinetool/react-spline** — Spline 3D scene embedding
+
+## Development
+
+```bash
+npm run dev      # Start dev server (localhost:4321)
+npm run build    # Production build to dist/
+npm run preview  # Preview production build
+```
