@@ -9,44 +9,87 @@
     <h2 class="text-3xl md:text-5xl font-bold mb-8">
       Thousands of Photos. No Time to Sort Them.
     </h2>
-    <div class="space-y-4 text-white/70 text-lg">
-      <p>Photos pile up — duplicates, blurry shots, random screenshots you forgot about.</p>
-      <p>Scrolling through your gallery to delete them one by one? Nobody has time for that.</p>
-      <p>So you keep putting it off, and the pile keeps growing.</p>
-    </div>
+    <p class="text-white/60 text-lg max-w-xl mx-auto">
+      Photos pile up — duplicates, blurry shots, random screenshots you forgot about. You know you should clean up, but <span class="text-white/90 font-medium">where do you even start?</span>
+    </p>
 
-    <div class="mt-12">
-      <div class="inline-block rounded-full bg-teal/15 px-8 py-4">
-        <div class="scale-in text-6xl md:text-8xl font-extrabold text-teal-bright glow-text-teal" id="stat-counter">
-          0+
-        </div>
+    <!-- Escalating stats -->
+    <div class="mt-12 space-y-6" id="stat-escalation">
+      <div class="opacity-0 translate-y-5 transition-all duration-500" data-stat="0">
+        <div class="text-3xl md:text-5xl font-extrabold text-white/60" data-count="250" data-suffix="">0</div>
+        <p class="text-white/40 text-sm mt-1">screenshots you forgot about</p>
       </div>
-      <p class="text-white/50 mt-4">photos on the average phone</p>
+      <div class="opacity-0 translate-y-5 transition-all duration-500" data-stat="1">
+        <div class="text-4xl md:text-6xl font-extrabold text-white/60" data-count="400" data-suffix="">0</div>
+        <p class="text-white/40 text-sm mt-1">duplicates taking up space</p>
+      </div>
+      <div class="opacity-0 scale-90 transition-all duration-500" data-stat="2">
+        <div class="inline-block rounded-full bg-teal/15 px-8 py-4">
+          <div class="text-6xl md:text-8xl font-extrabold text-teal-bright glow-text-teal" data-count="3000" data-suffix="+">0+</div>
+        </div>
+        <p class="text-white/50 mt-2">photos on the average phone</p>
+      </div>
     </div>
   </div>
 </section>
 
 <script>
-  const counter = document.getElementById('stat-counter');
-  if (counter) {
-    const target = 2000;
+  const escalation = document.getElementById('stat-escalation');
+  if (escalation) {
     let started = false;
+    const stats = escalation.querySelectorAll<HTMLElement>('[data-stat]');
+    const glowOrb = escalation.closest('section')?.querySelector('.glow-teal') as HTMLElement | null;
+
+    const countUp = (el: HTMLElement, target: number, suffix: string, duration: number) => {
+      const start = performance.now();
+      const step = (now: number) => {
+        const elapsed = now - start;
+        const progress = Math.min(elapsed / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target).toLocaleString() + suffix;
+        if (progress < 1) requestAnimationFrame(step);
+      };
+      requestAnimationFrame(step);
+    };
+
+    const reveal = (stat: HTMLElement, delay: number) => {
+      setTimeout(() => {
+        stat.style.opacity = '1';
+        stat.style.transform = 'translateY(0) scale(1)';
+        const numEl = stat.querySelector<HTMLElement>('[data-count]');
+        if (numEl) {
+          const target = Number(numEl.dataset.count);
+          const suffix = numEl.dataset.suffix || '';
+          const duration = target > 1000 ? 1200 : target > 200 ? 600 : 400;
+          countUp(numEl, target, suffix, duration);
+        }
+      }, delay);
+    };
+
+    // Glow pulse when the big number lands
+    const pulseGlow = () => {
+      if (!glowOrb) return;
+      glowOrb.style.transition = 'opacity 0.3s ease-out';
+      glowOrb.style.opacity = '0.5';
+      setTimeout(() => {
+        glowOrb.style.transition = 'opacity 0.8s ease-out';
+        glowOrb.style.opacity = '0.2';
+      }, 400);
+    };
+
     const observer = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting && !started) {
         started = true;
-        const duration = 1500;
-        const start = performance.now();
-        const step = (now: number) => {
-          const elapsed = now - start;
-          const progress = Math.min(elapsed / duration, 1);
-          const eased = 1 - Math.pow(1 - progress, 3);
-          const current = Math.floor(eased * target);
-          counter.textContent = current.toLocaleString() + '+';
-          if (progress < 1) requestAnimationFrame(step);
-        };
-        requestAnimationFrame(step);
+        reveal(stats[0], 0);
+        reveal(stats[1], 500);
+        setTimeout(() => {
+          reveal(stats[2], 0);
+          // Pulse glow when big count finishes
+          setTimeout(pulseGlow, 1200);
+        }, 1000);
       }
-    }, { threshold: 0.5 });
-    observer.observe(counter);
+    }, { threshold: 0.3 });
+
+    observer.observe(escalation);
   }
 </script>
