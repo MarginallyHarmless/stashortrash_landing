@@ -3,41 +3,50 @@
     <h2 class="text-3xl md:text-5xl font-bold text-center mb-16">
       How It Works
     </h2>
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-3 gap-8 stagger-in">
       <!-- Step 1: Trash -->
-      <div class="bg-carbon-light rounded-2xl p-8 text-center">
-        <div class="w-16 h-16 rounded-full bg-mauve/20 flex items-center justify-center mx-auto mb-6">
-          <svg class="w-8 h-8 text-mauve" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-          </svg>
+      <div class="card card-mauve text-center relative overflow-hidden">
+        <div class="absolute top-4 right-6 text-8xl font-extrabold text-white/[0.03] leading-none select-none">1</div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 rounded-full bg-mauve/20 flex items-center justify-center mx-auto mb-6 transition-transform hover:scale-110">
+            <svg class="w-8 h-8 text-mauve" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+            </svg>
+          </div>
+          <div class="text-sm text-white/40 mb-2">Step 1</div>
+          <h3 class="text-xl font-bold mb-3">Swipe Left = Trash</h3>
+          <p class="text-white/60">See a blurry selfie? Old screenshot? Swipe it away.</p>
         </div>
-        <div class="text-sm text-white/40 mb-2">Step 1</div>
-        <h3 class="text-xl font-bold mb-3">Swipe Left = Trash</h3>
-        <p class="text-white/60">See a blurry selfie? Old screenshot? Swipe it away.</p>
       </div>
 
       <!-- Step 2: Stash -->
-      <div class="bg-carbon-light rounded-2xl p-8 text-center">
-        <div class="w-16 h-16 rounded-full bg-teal/20 flex items-center justify-center mx-auto mb-6">
-          <svg class="w-8 h-8 text-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
-          </svg>
+      <div class="card card-teal text-center relative overflow-hidden">
+        <div class="absolute top-4 right-6 text-8xl font-extrabold text-white/[0.03] leading-none select-none">2</div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 rounded-full bg-teal/20 flex items-center justify-center mx-auto mb-6 transition-transform hover:scale-110">
+            <svg class="w-8 h-8 text-teal" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+          </div>
+          <div class="text-sm text-white/40 mb-2">Step 2</div>
+          <h3 class="text-xl font-bold mb-3">Swipe Right = Stash</h3>
+          <p class="text-white/60">Worth keeping? Swipe right and move on.</p>
         </div>
-        <div class="text-sm text-white/40 mb-2">Step 2</div>
-        <h3 class="text-xl font-bold mb-3">Swipe Right = Stash</h3>
-        <p class="text-white/60">Worth keeping? Swipe right and move on.</p>
       </div>
 
       <!-- Step 3: Review -->
-      <div class="bg-carbon-light rounded-2xl p-8 text-center">
-        <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-6">
-          <svg class="w-8 h-8 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
-            <path stroke-linecap="round" stroke-linejoin="round" d="M9 14l-4-4m0 0l4-4m-4 4h11.5M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-          </svg>
+      <div class="card text-center relative overflow-hidden">
+        <div class="absolute top-4 right-6 text-8xl font-extrabold text-white/[0.03] leading-none select-none">3</div>
+        <div class="relative z-10">
+          <div class="w-16 h-16 rounded-full bg-white/10 flex items-center justify-center mx-auto mb-6 transition-transform hover:scale-110">
+            <svg class="w-8 h-8 text-white/60" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" />
+            </svg>
+          </div>
+          <div class="text-sm text-white/40 mb-2">Step 3</div>
+          <h3 class="text-xl font-bold mb-3">Review & Delete</h3>
+          <p class="text-white/60">Check your delete queue before anything's permanent. Undo anytime.</p>
         </div>
-        <div class="text-sm text-white/40 mb-2">Step 3</div>
-        <h3 class="text-xl font-bold mb-3">Review & Delete</h3>
-        <p class="text-white/60">Check your delete queue before anything's permanent. Undo anytime.</p>
       </div>
     </div>
     <p class="text-center text-white/40 mt-10">
