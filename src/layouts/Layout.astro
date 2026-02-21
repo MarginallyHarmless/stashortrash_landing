@@ -35,8 +35,9 @@ const { title, description } = Astro.props;
   </head>
   <body class="bg-carbon text-white font-sans">
     <main>
-      <slot />
+      <slot name="content" />
     </main>
+    <slot name="footer" />
     <script>
       const observer = new IntersectionObserver(
         (entries) => {
