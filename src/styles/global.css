@@ -17,6 +17,7 @@ html {
 body {
   background-color: var(--color-carbon);
   color: #ffffff;
+  overflow-x: clip;
 }
 
 /* Noise texture overlay */
