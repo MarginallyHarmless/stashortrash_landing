@@ -22,5 +22,5 @@ No data collection whatsoever. All photo analysis happens on-device. No accounts
 ## Links
 
 - Website: https://stashortrash.com
-- Google Play: https://play.google.com/store/apps/details?id=YOUR_APP_ID
+- Google Play: https://play.google.com/store/apps/details?id=com.stashortrash.app&hl=en
 - Privacy Policy: https://stashortrash.com/privacy
